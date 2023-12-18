@@ -1,0 +1,82 @@
+﻿<Window x:Class="torsani.giacomo._4i.stampante.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:torsani.giacomo._4i.stampante"
+        mc:Ignorable="d"
+
+        Title="WPFStampante " Height="450" Width="800"
+        WindowStartupLocation="CenterScreen" Loaded="Torsani_Window_Loaded">
+    <Border BorderBrush="White">
+        <Grid Name="myGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="139*"/>
+                <ColumnDefinition Width="65*"/>
+                <ColumnDefinition Width="196*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="145*"/>
+                <RowDefinition Height="86*"/>
+                <RowDefinition Height="203*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text= "Numero fogli:" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Height="27" Width="122"/>
+            <TextBlock x:Name="StatoCarta" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Height="26" Width="178"/>
+            <Grid Margin="0,145,10,0" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="InsCarta" Grid.Column="0" TextChanged="InsCarta_TextChanged"/>
+                <Button x:Name="BtnInsCarta" Grid.Column="1" Content="Premi per inserire&#x0a;la carta" FontSize="15" Click="BtnInsCarta_Click"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="0" Margin="0,16,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text= "inserire la di inchiostro &#x0a;richiesta per ogni colore" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="20"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="InsStampaBlack" Grid.Column="0" Background="Black" BorderBrush="Gray"/>
+                    <TextBox x:Name="InsStampaMagenta" Grid.Column="1" Background="Magenta" BorderBrush="Gray" TextChanged="InsStampaMagenta_TextChanged"/>
+                    <TextBox x:Name="InsStampaYellow" Grid.Column="2" Background="Yellow" BorderBrush="Gray"/>
+                    <TextBox x:Name="InsStampaCiano" Grid.Column="3" Background="Cyan" BorderBrush="Gray"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1" Background="White" Margin="0,16,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button x:Name="BtnStampa" Grid.Row="0" Click="BtnStampa_Click" Content="Stampa" FontSize="20"/>
+                <Button x:Name="BtnStampaRnd" Grid.Row="1" Click="BtnStampaRnd_Click" Content="Stampa con&#x0a;valori random" FontSize="15"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="2" Background="White" Margin="10,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="Serbblack" Background="Black" Foreground="White" FontSize="20" />
+                <TextBlock x:Name="Serbmagenta" Grid.Column="1" Grid.Row="0" Background="Magenta" FontSize="20"/>
+                <TextBlock x:Name="Serbyellow" Grid.Column="2" Grid.Row="0" Background="Yellow" FontSize="20"/>
+                <TextBlock x:Name="Serbciano" Grid.Column="3" Grid.Row="0" Background="Cyan" FontSize="20"/>
+                <Button x:Name="BtnSostNero" Grid.Column="0" Grid.Row="1" Click="BtnSostNero_Click" Content="Sostituisci BK" FontSize="15"/>
+                <Button x:Name="BtnSostMagenta" Grid.Column="1" Grid.Row="1" Click="BtnSostMagenta_Click" Content="Sostituisci M" FontSize="15"/>
+                <Button x:Name="BtnSostYellow" Grid.Column="2" Grid.Row="1" Click="BtnSostYellow_Click" Content="Sostituisci Y" FontSize="15"/>
+                <Button x:Name="BtnSostCiano" Grid.Column="3" Grid.Row="1" Click="BtnSostCiano_Click" Content="Sostituisci C" FontSize="15"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
